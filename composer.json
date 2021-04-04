@@ -1,0 +1,22 @@
+{
+    "name":        "sidroberts/centum-project",
+    "description": "A skeleton project for the Centum framework.",
+    "type":        "project",
+    "license":     "UNLICENSE",
+
+
+
+    "require": {
+        "php": "~8.0",
+
+        "sidroberts/centum": "@dev"
+    },
+
+
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
