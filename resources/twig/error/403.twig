@@ -1,0 +1,32 @@
+{% extends "index.twig" %}
+
+
+
+{% block title %}
+    Error 403 - Forbidden
+{% endblock title %}
+
+
+
+{% block content %}
+
+<div class="jumbotron lead text-center">
+
+    <h1 class="display-4">
+        Error 403 - Forbidden
+    </h1>
+
+
+
+    <p class="lead">
+        The URI <code>{{ uri }}</code> is forbidden.
+        You may need to log in.
+    </p>
+
+    <p class="lead">
+        Alternatively, you can <a href="http://www.checkupdown.com/status/E403.html">learn more about 403 errors</a>.
+    </p>
+
+</div>
+
+{% endblock content %}

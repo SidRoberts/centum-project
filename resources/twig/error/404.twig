@@ -1,0 +1,32 @@
+{% extends "index.twig" %}
+
+
+
+{% block title %}
+    Error 404 - Not Found
+{% endblock title %}
+
+
+
+{% block content %}
+
+<div class="jumbotron lead text-center">
+
+    <h1 class="display-4">
+        Error 404 - Not Found
+    </h1>
+
+
+
+    <p class="lead">
+        The URI <code>{{ uri }}</code> could not be found.
+        Did you type it correctly?
+    </p>
+
+    <p class="lead">
+        Alternatively, you can <a href="http://www.checkupdown.com/status/E404.html">learn more about 404 errors</a>.
+    </p>
+
+</div>
+
+{% endblock content %}

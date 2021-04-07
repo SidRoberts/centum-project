@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    {% include '_partials/head.twig' %}
+</head>
+
+<body>
+
+    {% include '_partials/nav.twig' %}
+
+
+
+    {% set flashOutput = flash() %}
+
+    {% if flashOutput %}
+        <div class="container">
+            {{ flashOutput|raw }}
+        </div>
+    {% endif %}
+
+
+
+    <main class="container my-5">
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+
+
+    {% include '_partials/footer.twig' %}
+
+</body>
+
+</html>

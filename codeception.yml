@@ -21,4 +21,4 @@ suites:
             enabled: true
             whitelist:
                 include:
-                    - src/php/*
+                    - src/*
