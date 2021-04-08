@@ -11,14 +11,22 @@ settings:
     shuffle: true
 
 suites:
+    functional:
+        path: functional
+        actor: FunctionalTester
+        modules:
+            enabled:
+                - Asserts
+                - Centum\Codeception\Module
     unit:
         path: unit
         actor: UnitTester
         modules:
             enabled:
                 - Asserts
-        coverage:
-            enabled: true
-            whitelist:
-                include:
-                    - src/*
+
+coverage:
+    enabled: true
+    whitelist:
+        include:
+            - src/*
