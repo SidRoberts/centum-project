@@ -57,20 +57,16 @@ $container->setDynamic(
 //                                  SERVICES                                  //
 ////////////////////////////////////////////////////////////////////////////////
 
-$container->setDynamic(
+$container->addAlias(
     HandlerInterface::class,
-    function () {
-        return new SessionGlobalVariableHandler();
-    }
+    SessionGlobalVariableHandler::class
 );
 
 ////////////////////////////////////////////////////////////////////////////////
 
-$container->setDynamic(
+$container->addAlias(
     FormatterInterface::class,
-    function () {
-        return new HtmlFormatter();
-    }
+    HtmlFormatter::class
 );
 
 ////////////////////////////////////////////////////////////////////////////////
