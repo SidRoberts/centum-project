@@ -1,6 +1,9 @@
 <?php
 
+namespace App\Commands;
+
 use Centum\Console\Application;
+use Throwable;
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                  CONSOLE                                   //
@@ -15,7 +18,7 @@ $console = new Application($container);
 ////////////////////////////////////////////////////////////////////////////////
 
 $console->addCommand(
-    new App\Commands\MainCommand()
+    new MainCommand()
 );
 
 
@@ -26,7 +29,7 @@ $console->addCommand(
 
 $console->addExceptionHandler(
     Throwable::class,
-    new App\Commands\ErrorCommand()
+    new ErrorCommand()
 );
 
 

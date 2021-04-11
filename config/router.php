@@ -1,7 +1,10 @@
 <?php
 
+namespace App\Controllers;
+
 use Centum\Mvc\Exception\RouteNotFoundException;
 use Centum\Mvc\Router;
+use Throwable;
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                   ROUTER                                   //
@@ -15,13 +18,14 @@ $router = new Router($container);
 //                                   ROUTES                                   //
 ////////////////////////////////////////////////////////////////////////////////
 
-$router->get("/", App\Controllers\IndexController::class, "index");
+$router->get("/", IndexController::class, "index");
 
 ////////////////////////////////////////////////////////////////////////////////
 
-$router->get("/error/403", App\Controllers\ErrorController::class, "error403");
-$router->get("/error/404", App\Controllers\ErrorController::class, "error404");
-$router->get("/error/500", App\Controllers\ErrorController::class, "error500");
+$router->get("/error/403", ErrorController::class, "error403");
+$router->get("/error/404", ErrorController::class, "error404");
+$router->get("/error/500", ErrorController::class, "error500");
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -30,13 +34,13 @@ $router->get("/error/500", App\Controllers\ErrorController::class, "error500");
 
 $router->addExceptionHandler(
     RouteNotFoundException::class,
-    App\Controllers\ErrorController::class,
+    ErrorController::class,
     "error404"
 );
 
 $router->addExceptionHandler(
     Throwable::class,
-    App\Controllers\ErrorController::class,
+    ErrorController::class,
     "error500"
 );
 
