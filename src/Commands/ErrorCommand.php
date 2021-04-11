@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Commands;
 
 use Centum\Console\Command;
 use Centum\Console\Parameters;

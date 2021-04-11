@@ -15,13 +15,13 @@ $router = new Router($container);
 //                                   ROUTES                                   //
 ////////////////////////////////////////////////////////////////////////////////
 
-$router->get("/", App\Web\Controllers\IndexController::class, "index");
+$router->get("/", App\Controllers\IndexController::class, "index");
 
 ////////////////////////////////////////////////////////////////////////////////
 
-$router->get("/error/403", App\Web\Controllers\ErrorController::class, "error403");
-$router->get("/error/404", App\Web\Controllers\ErrorController::class, "error404");
-$router->get("/error/500", App\Web\Controllers\ErrorController::class, "error500");
+$router->get("/error/403", App\Controllers\ErrorController::class, "error403");
+$router->get("/error/404", App\Controllers\ErrorController::class, "error404");
+$router->get("/error/500", App\Controllers\ErrorController::class, "error500");
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -30,13 +30,13 @@ $router->get("/error/500", App\Web\Controllers\ErrorController::class, "error500
 
 $router->addExceptionHandler(
     RouteNotFoundException::class,
-    App\Web\Controllers\ErrorController::class,
+    App\Controllers\ErrorController::class,
     "error404"
 );
 
 $router->addExceptionHandler(
     Throwable::class,
-    App\Web\Controllers\ErrorController::class,
+    App\Controllers\ErrorController::class,
     "error500"
 );
 

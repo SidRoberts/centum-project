@@ -15,7 +15,7 @@ $console = new Application($container);
 ////////////////////////////////////////////////////////////////////////////////
 
 $console->addCommand(
-    new App\Console\Commands\MainCommand()
+    new App\Commands\MainCommand()
 );
 
 
@@ -26,7 +26,7 @@ $console->addCommand(
 
 $console->addExceptionHandler(
     Throwable::class,
-    new App\Console\Commands\ErrorCommand()
+    new App\Commands\ErrorCommand()
 );
 
 

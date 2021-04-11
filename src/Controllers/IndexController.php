@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Web\Controllers;
+namespace App\Controllers;
 
 use Centum\Http\Response;
 use Twig\Environment;
