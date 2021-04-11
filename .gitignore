@@ -1,0 +1,6 @@
+# Composer
+/vendor/
+/composer.lock
+
+# Codeception
+/tests/_support/_generated/
