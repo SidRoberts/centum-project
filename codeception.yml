@@ -14,16 +14,14 @@ suites:
   functional:
     path: functional
     actor: FunctionalTester
-    modules:
-      enabled:
-        - Asserts
-        - Centum\Codeception\Module
   unit:
     path: unit
     actor: UnitTester
-    modules:
-      enabled:
-        - Asserts
+
+modules:
+  enabled:
+    - Asserts
+    - Centum\Codeception\Module
 
 coverage:
   enabled: true
