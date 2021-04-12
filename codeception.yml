@@ -1,32 +1,32 @@
 namespace: Tests
 
 paths:
-    tests: tests
-    data: tests/_data
-    output: tests/_output
-    support: tests/_support
+  tests: tests
+  data: tests/_data
+  output: tests/_output
+  support: tests/_support
 
 settings:
-    lint: true
-    shuffle: true
+  lint: true
+  shuffle: true
 
 suites:
-    functional:
-        path: functional
-        actor: FunctionalTester
-        modules:
-            enabled:
-                - Asserts
-                - Centum\Codeception\Module
-    unit:
-        path: unit
-        actor: UnitTester
-        modules:
-            enabled:
-                - Asserts
+  functional:
+    path: functional
+    actor: FunctionalTester
+    modules:
+      enabled:
+        - Asserts
+        - Centum\Codeception\Module
+  unit:
+    path: unit
+    actor: UnitTester
+    modules:
+      enabled:
+        - Asserts
 
 coverage:
-    enabled: true
-    whitelist:
-        include:
-            - src/*
+  enabled: true
+  whitelist:
+    include:
+      - src/*
