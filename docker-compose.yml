@@ -14,3 +14,11 @@ services:
     volumes:
       - .:/app/
       - ./resources/docker/php.ini:/usr/local/etc/php-fpm.d/zzz-custom.conf
+  beanstalkd:
+    image: sidroberts/beanstalkd:1.12
+  background:
+    image: sidroberts/php
+    volumes:
+      - .:/app/
+    command: php /app/bin/centum queue-consume
+    restart: always
