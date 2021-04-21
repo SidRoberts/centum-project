@@ -18,13 +18,13 @@ $router = new Router($container);
 //                                   ROUTES                                   //
 ////////////////////////////////////////////////////////////////////////////////
 
-$router->get("/", IndexController::class, "index");
+$group = $router->group();
 
-////////////////////////////////////////////////////////////////////////////////
+$group->get("/", IndexController::class, "index");
 
-$router->get("/error/403", ErrorController::class, "error403");
-$router->get("/error/404", ErrorController::class, "error404");
-$router->get("/error/500", ErrorController::class, "error500");
+$group->get("/error/403", ErrorController::class, "error403");
+$group->get("/error/404", ErrorController::class, "error404");
+$group->get("/error/500", ErrorController::class, "error500");
 
 
 
