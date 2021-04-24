@@ -13,7 +13,7 @@ services:
     image: sidroberts/php
     volumes:
       - .:/app/
-      - ./resources/docker/php.ini:/usr/local/etc/php-fpm.d/zzz-custom.conf
+      - ./resources/docker/php.ini:/usr/local/etc/php-fpm.d/zzz-custom.conf:ro
   beanstalkd:
     image: sidroberts/beanstalkd:1.12
   background:
