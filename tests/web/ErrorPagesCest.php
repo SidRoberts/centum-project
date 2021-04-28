@@ -1,24 +1,26 @@
 <?php
 
-namespace Tests;
+namespace Tests\Web;
+
+use Tests\WebTester;
 
 class ErrorPagesCest
 {
-    public function pageForbidden(FunctionalTester $I)
+    public function pageForbidden(WebTester $I)
     {
         $I->amOnPage("/error/403");
 
         $I->seeResponseCodeIs(403);
     }
 
-    public function pageNotFound(FunctionalTester $I)
+    public function pageNotFound(WebTester $I)
     {
         $I->amOnPage("/a/page/that/doesnt/exist");
 
         $I->seeResponseCodeIs(404);
     }
 
-    public function internalServerError(FunctionalTester $I)
+    public function internalServerError(WebTester $I)
     {
         $I->amOnPage("/error/500");
 
