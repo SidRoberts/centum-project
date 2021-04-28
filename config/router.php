@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Centum\Container\Container;
 use Centum\Mvc\Exception\RouteNotFoundException;
 use Centum\Mvc\Router;
 use Throwable;
@@ -10,6 +11,9 @@ use Throwable;
 //                                   ROUTER                                   //
 ////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @var Container $container
+ */
 $router = new Router($container);
 
 

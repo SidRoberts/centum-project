@@ -33,7 +33,13 @@ $container = new Container();
 
 $container->setDynamic(
     Router::class,
-    function (Container $container) {
+    /**
+     * @psalm-suppress UnusedClosureParam
+     */
+    function (Container $container): Router {
+        /**
+         * @var Router
+         */
         return require __DIR__ . "/router.php";
     }
 );
@@ -42,7 +48,13 @@ $container->setDynamic(
 
 $container->setDynamic(
     Application::class,
-    function (Container $container) {
+    /**
+     * @psalm-suppress UnusedClosureParam
+     */
+    function (Container $container): Application {
+        /**
+         * @var Application
+         */
         return require __DIR__ . "/console.php";
     }
 );
@@ -69,7 +81,7 @@ $container->addAlias(
 
 $container->setDynamic(
     Request::class,
-    function () {
+    function (): Request {
         return RequestFactory::createFromGlobals();
     }
 );
@@ -78,7 +90,7 @@ $container->setDynamic(
 
 $container->setDynamic(
     Url::class,
-    function () {
+    function (): Url {
         return new Url("/");
     }
 );
@@ -87,7 +99,7 @@ $container->setDynamic(
 
 $container->setDynamic(
     Environment::class,
-    function (Url $url, Flash $flash) {
+    function (Url $url, Flash $flash): Environment {
         $loader = new FilesystemLoader(
             __DIR__ . "/../resources/twig/"
         );
