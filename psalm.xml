@@ -16,4 +16,7 @@
             <file name="tests/_support/UnitTester.php"/>
         </ignoreFiles>
     </projectFiles>
+    <plugins>
+        <pluginClass class="Psalm\MockeryPlugin\Plugin"/>
+    </plugins>
 </psalm>
