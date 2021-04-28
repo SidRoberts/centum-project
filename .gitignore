@@ -4,3 +4,10 @@
 
 # Codeception
 /tests/_support/_generated/
+
+# PHP Code Sniffer
+/.php_cs.cache
+
+# NPM
+/node_modules/
+/package-lock.json
