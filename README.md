@@ -11,6 +11,12 @@ A quick starting point for projects based on the [Centum framework](https://gith
 
 
 
+## Documentation
+
+Check out Centum's [Quick Start](https://sidroberts.co.uk/centum/quick-start/) guide.
+
+
+
 ## Usage
 
 A skeleton project can be created using Composer's `create-project` command:
@@ -25,9 +31,11 @@ docker-compose up
 
 
 
-## Documentation
+## Testing
 
-Check out Centum's [Quick Start](https://sidroberts.co.uk/centum/quick-start/) guide.
+```bash
+vendor/bin/codecept run
+```
 
 
 
