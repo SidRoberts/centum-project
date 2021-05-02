@@ -41,6 +41,8 @@ vendor/bin/codecept run
 
 ## License
 
+[![License](https://img.shields.io/github/license/SidRoberts/centum-project?style=for-the-badge)](LICENSE.md)
+
 Whilst the [Centum framework is licensed under the MIT License](https://github.com/SidRoberts/centum-project/blob/development/LICENSE.md), **this skeleton project is released under the Unlicense license**.
 
 See [LICENSE.md](LICENSE.md) for more details.
