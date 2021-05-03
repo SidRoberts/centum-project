@@ -3,8 +3,8 @@
 namespace App\Controllers;
 
 use Centum\Container\Container;
-use Centum\Mvc\Exception\RouteNotFoundException;
-use Centum\Mvc\Router;
+use Centum\Router\Exception\RouteNotFoundException;
+use Centum\Router\Router;
 use Throwable;
 
 ////////////////////////////////////////////////////////////////////////////////

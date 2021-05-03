@@ -9,7 +9,7 @@ use Centum\Http\Request;
 use Centum\Http\RequestFactory;
 use Centum\Http\Session\HandlerInterface;
 use Centum\Http\Session\SessionGlobalVariableHandler;
-use Centum\Mvc\Router;
+use Centum\Router\Router;
 use Centum\Twig\FlashExtension;
 use Centum\Twig\UrlExtension;
 use Centum\Twig\WhitelistedFunctionsExtension;
