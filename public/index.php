@@ -2,7 +2,7 @@
 
 require __DIR__ . "/../vendor/autoload.php";
 
-use Centum\Boot\WebBootstrap;
+use Centum\App\WebBootstrap;
 
 $container = require __DIR__ . "/../config/container.php";
 
