@@ -5,7 +5,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - .:/app/
+      - .:/app/:ro
       - ./resources/docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
   php:
     image: sidroberts/php
