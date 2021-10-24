@@ -27,8 +27,8 @@ nbproject
 # Codeception
 /tests/_support/_generated/
 
-# PHP Code Sniffer
-/.php_cs.cache
+# PHP CS Sniffer
+/.php-cs-fixer.cache
 
 # NPM
 /node_modules/
