@@ -82,7 +82,9 @@ $container->addAlias(
 $container->setDynamic(
     Request::class,
     function (): Request {
-        return RequestFactory::createFromGlobals();
+        $requestFactory = new RequestFactory();
+
+        return $requestFactory->createFromGlobals();
     }
 );
 
