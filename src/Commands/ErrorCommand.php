@@ -16,7 +16,7 @@ class ErrorCommand extends Command
 
     public function execute(Terminal $terminal, Container $container, Parameters $parameters): int
     {
-        $terminal->write("Something went wrong. :(");
+        $terminal->writeLine("Something went wrong. :(");
 
         return 1;
     }
