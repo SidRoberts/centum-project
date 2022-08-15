@@ -129,16 +129,17 @@ $container->setDynamic(
             new UrlExtension($url)
         );
 
+        /** @var array<callable-string> */
+        $whitelistedFunctions = [
+            "number_format",
+            "round",
+            "substr",
+            "ucfirst",
+            "uclast",
+        ];
+
         $twig->addExtension(
-            new WhitelistedFunctionsExtension(
-                [
-                    "number_format",
-                    "round",
-                    "substr",
-                    "ucfirst",
-                    "uclast",
-                ]
-            )
+            new WhitelistedFunctionsExtension($whitelistedFunctions)
         );
 
 
