@@ -2,11 +2,11 @@
 
 namespace Tests\Web;
 
-use Tests\WebTester;
+use Tests\Support\WebTester;
 
 class IndexCest
 {
-    public function tryToTest(WebTester $I)
+    public function tryToTest(WebTester $I): void
     {
         $I->amOnPage("/");
 

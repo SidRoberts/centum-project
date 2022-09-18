@@ -1,15 +1,15 @@
 <?php
 
-namespace Tests;
+namespace Tests\Support;
 
 use Codeception\Actor;
 
 /**
  * @SuppressWarnings(PHPMD)
  */
-class WebTester extends Actor
+class ConsoleTester extends Actor
 {
-    use _generated\WebTesterActions;
+    use _generated\ConsoleTesterActions;
 
     /*
      * Define custom actions here
