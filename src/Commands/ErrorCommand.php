@@ -3,9 +3,9 @@
 namespace App\Commands;
 
 use Centum\Console\Command;
-use Centum\Console\Parameters;
-use Centum\Console\Terminal;
-use Centum\Container\Container;
+use Centum\Interfaces\Console\ParametersInterface;
+use Centum\Interfaces\Console\TerminalInterface;
+use Centum\Interfaces\Container\ContainerInterface;
 
 class ErrorCommand extends Command
 {
@@ -14,7 +14,7 @@ class ErrorCommand extends Command
         return "error";
     }
 
-    public function execute(Terminal $terminal, Container $container, Parameters $parameters): int
+    public function execute(TerminalInterface $terminal, ContainerInterface $container, ParametersInterface $parameters): int
     {
         $terminal->writeLine("Something went wrong. :(");
 

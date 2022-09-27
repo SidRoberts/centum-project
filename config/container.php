@@ -4,17 +4,17 @@ use Centum\Console\Application;
 use Centum\Container\Container;
 use Centum\Flash\Flash;
 use Centum\Flash\Formatter\HtmlFormatter;
-use Centum\Flash\FormatterInterface;
-use Centum\Http\Request;
 use Centum\Http\RequestFactory;
-use Centum\Http\Session\HandlerInterface;
-use Centum\Http\Session\SessionGlobalVariableHandler;
+use Centum\Http\Session\GlobalSession;
+use Centum\Interfaces\Container\ContainerInterface;
+use Centum\Interfaces\Flash\FormatterInterface as FlashFormatterInterface;
+use Centum\Interfaces\Http\RequestInterface;
+use Centum\Interfaces\Http\SessionInterface;
 use Centum\Router\Router;
 use Centum\Twig\FlashExtension;
 use Centum\Twig\UrlExtension;
 use Centum\Twig\WhitelistedFunctionsExtension;
 use Centum\Url\Url;
-use Pheanstalk\Pheanstalk;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
@@ -36,7 +36,7 @@ $container->setDynamic(
     /**
      * @psalm-suppress UnusedClosureParam
      */
-    function (Container $container): Router {
+    function (ContainerInterface $container): Router {
         /**
          * @var Router
          */
@@ -66,22 +66,22 @@ $container->setDynamic(
 ////////////////////////////////////////////////////////////////////////////////
 
 $container->addAlias(
-    HandlerInterface::class,
-    SessionGlobalVariableHandler::class
+    SessionInterface::class,
+    GlobalSession::class
 );
 
 ////////////////////////////////////////////////////////////////////////////////
 
 $container->addAlias(
-    FormatterInterface::class,
+    FlashFormatterInterface::class,
     HtmlFormatter::class
 );
 
 ////////////////////////////////////////////////////////////////////////////////
 
 $container->setDynamic(
-    Request::class,
-    function (): Request {
+    RequestInterface::class,
+    function (): RequestInterface {
         $requestFactory = new RequestFactory();
 
         return $requestFactory->createFromGlobals();
