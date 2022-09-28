@@ -1,16 +1,17 @@
 <?php
 
-use Centum\Console\Application;
 use Centum\Container\Container;
-use Centum\Flash\Flash;
 use Centum\Flash\Formatter\HtmlFormatter;
 use Centum\Http\RequestFactory;
 use Centum\Http\Session\GlobalSession;
+use Centum\Interfaces\Console\ApplicationInterface;
 use Centum\Interfaces\Container\ContainerInterface;
-use Centum\Interfaces\Flash\FormatterInterface as FlashFormatterInterface;
+use Centum\Interfaces\Flash\FlashInterface;
+use Centum\Interfaces\Flash\FormatterInterface;
 use Centum\Interfaces\Http\RequestInterface;
 use Centum\Interfaces\Http\SessionInterface;
-use Centum\Router\Router;
+use Centum\Interfaces\Router\RouterInterface;
+use Centum\Interfaces\Url\UrlInterface;
 use Centum\Twig\FlashExtension;
 use Centum\Twig\UrlExtension;
 use Centum\Twig\WhitelistedFunctionsExtension;
@@ -32,14 +33,10 @@ $container = new Container();
 ////////////////////////////////////////////////////////////////////////////////
 
 $container->setDynamic(
-    Router::class,
-    /**
-     * @psalm-suppress UnusedClosureParam
-     */
-    function (ContainerInterface $container): Router {
-        /**
-         * @var Router
-         */
+    RouterInterface::class,
+    /** @psalm-suppress UnusedClosureParam */
+    function (ContainerInterface $container): RouterInterface {
+        /** @var RouterInterface */
         return require __DIR__ . "/router.php";
     }
 );
@@ -47,14 +44,10 @@ $container->setDynamic(
 ////////////////////////////////////////////////////////////////////////////////
 
 $container->setDynamic(
-    Application::class,
-    /**
-     * @psalm-suppress UnusedClosureParam
-     */
-    function (Container $container): Application {
-        /**
-         * @var Application
-         */
+    ApplicationInterface::class,
+    /** @psalm-suppress UnusedClosureParam */
+    function (ContainerInterface $container): ApplicationInterface {
+        /** @var ApplicationInterface */
         return require __DIR__ . "/console.php";
     }
 );
@@ -73,7 +66,7 @@ $container->addAlias(
 ////////////////////////////////////////////////////////////////////////////////
 
 $container->addAlias(
-    FlashFormatterInterface::class,
+    FormatterInterface::class,
     HtmlFormatter::class
 );
 
@@ -91,8 +84,8 @@ $container->setDynamic(
 ////////////////////////////////////////////////////////////////////////////////
 
 $container->setDynamic(
-    Url::class,
-    function (): Url {
+    UrlInterface::class,
+    function (): UrlInterface {
         return new Url("/");
     }
 );
@@ -101,7 +94,7 @@ $container->setDynamic(
 
 $container->setDynamic(
     Environment::class,
-    function (Url $url, Flash $flash): Environment {
+    function (UrlInterface $url, FlashInterface $flash): Environment {
         $loader = new FilesystemLoader(
             __DIR__ . "/../resources/twig/"
         );

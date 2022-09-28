@@ -2,14 +2,15 @@
 
 namespace App\Controllers;
 
-use Centum\Http\Request;
 use Centum\Http\Response;
 use Centum\Http\Status;
+use Centum\Interfaces\Http\RequestInterface;
+use Centum\Interfaces\Http\ResponseInterface;
 use Twig\Environment;
 
 final class ErrorController
 {
-    public function error403(Environment $twig, Request $request): Response
+    public function error403(Environment $twig, RequestInterface $request): ResponseInterface
     {
         return new Response(
             $twig->render(
@@ -22,7 +23,7 @@ final class ErrorController
         );
     }
 
-    public function error404(Environment $twig, Request $request): Response
+    public function error404(Environment $twig, RequestInterface $request): ResponseInterface
     {
         return new Response(
             $twig->render(
@@ -35,7 +36,7 @@ final class ErrorController
         );
     }
 
-    public function error500(Environment $twig, Request $request): Response
+    public function error500(Environment $twig, RequestInterface $request): ResponseInterface
     {
         return new Response(
             $twig->render(

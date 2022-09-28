@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use Centum\Container\Container;
+use Centum\Interfaces\Container\ContainerInterface;
 use Centum\Router\Exception\RouteNotFoundException;
 use Centum\Router\Router;
 use Throwable;
@@ -11,9 +11,7 @@ use Throwable;
 //                                   ROUTER                                   //
 ////////////////////////////////////////////////////////////////////////////////
 
-/**
- * @var Container $container
- */
+/** @var ContainerInterface $container */
 $router = new Router($container);
 
 

@@ -3,16 +3,14 @@
 namespace App\Commands;
 
 use Centum\Console\Application;
-use Centum\Container\Container;
+use Centum\Interfaces\Container\ContainerInterface;
 use Throwable;
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                  CONSOLE                                   //
 ////////////////////////////////////////////////////////////////////////////////
 
-/**
- * @var Container $container
- */
+/** @var ContainerInterface $container */
 $console = new Application($container);
 
 
