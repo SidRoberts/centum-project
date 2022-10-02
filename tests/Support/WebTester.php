@@ -2,6 +2,8 @@
 
 namespace Tests\Support;
 
+use Centum\Codeception\Actions\HtmlActions;
+use Centum\Codeception\Actions\RouterActions;
 use Codeception\Actor;
 
 /**
@@ -11,7 +13,6 @@ class WebTester extends Actor
 {
     use _generated\WebTesterActions;
 
-    /*
-     * Define custom actions here
-     */
+    use HtmlActions;
+    use RouterActions;
 }

@@ -2,6 +2,7 @@
 
 namespace Tests\Support;
 
+use Centum\Codeception\Actions\UnitTestActions;
 use Codeception\Actor;
 
 /**
@@ -11,7 +12,5 @@ class UnitTester extends Actor
 {
     use _generated\UnitTesterActions;
 
-    /*
-     * Define custom actions here
-     */
+    use UnitTestActions;
 }

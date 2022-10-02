@@ -2,6 +2,7 @@
 
 namespace Tests\Support;
 
+use Centum\Codeception\Actions\ConsoleActions;
 use Codeception\Actor;
 
 /**
@@ -11,7 +12,5 @@ class ConsoleTester extends Actor
 {
     use _generated\ConsoleTesterActions;
 
-    /*
-     * Define custom actions here
-     */
+    use ConsoleActions;
 }
