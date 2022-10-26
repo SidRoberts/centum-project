@@ -35,6 +35,8 @@ docker-compose up
 
 ```bash
 vendor/bin/codecept run
+vendor/bin/psalm
+vendor/bin/phpstan
 ```
 
 

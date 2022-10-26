@@ -29,3 +29,13 @@ jobs:
       run: vendor/bin/codecept build
     - name: Run psalm
       run: vendor/bin/psalm
+  phpstan:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+    - name: Run phpstan
+      run: vendor/bin/phpstan
