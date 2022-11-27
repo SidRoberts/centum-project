@@ -22,7 +22,7 @@
         "mockery/mockery": "~1.0",
 
         "vimeo/psalm": "~4.0",
-        "psalm/plugin-mockery": "0.10.0",
+        "psalm/plugin-mockery": "0.11.0",
 
         "phpstan/phpstan": "~1.8"
     },
