@@ -10,6 +10,7 @@ use Throwable;
 //                                  CONSOLE                                   //
 ////////////////////////////////////////////////////////////////////////////////
 
+/** @psalm-suppress UnnecessaryVarAnnotation */
 /** @var ContainerInterface $container */
 $console = new Application($container);
 
