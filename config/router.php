@@ -11,7 +11,10 @@ use Throwable;
 //                                   ROUTER                                   //
 ////////////////////////////////////////////////////////////////////////////////
 
-/** @var ContainerInterface $container */
+/**
+ * @psalm-suppress UnnecessaryVarAnnotation
+ * @var ContainerInterface $container
+ */
 $router = new Router($container);
 
 
