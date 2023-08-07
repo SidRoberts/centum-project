@@ -2,6 +2,9 @@
 <psalm
     errorLevel="1"
     resolveFromConfigFile="true"
+    findUnusedBaselineEntry="true"
+    findUnusedCode="true"
+    findUnusedVariablesAndParams="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
@@ -19,13 +22,19 @@
         </ignoreFiles>
     </projectFiles>
     <issueHandlers>
-        <TooManyArguments>
+        <PossiblyUnusedMethod>
+            <errorLevel type="suppress">
+                <directory name="src/Controllers"/>
+            </errorLevel>
+        </PossiblyUnusedMethod>
+        <UnusedClass>
             <errorLevel type="suppress">
                 <directory name="tests/Console"/>
+                <directory name="tests/Support"/>
                 <directory name="tests/Unit"/>
                 <directory name="tests/Web"/>
             </errorLevel>
-        </TooManyArguments>
+        </UnusedClass>
     </issueHandlers>
     <plugins>
         <pluginClass class="Psalm\MockeryPlugin\Plugin"/>
