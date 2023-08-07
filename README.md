@@ -33,9 +33,22 @@ docker-compose up
 
 ## Testing
 
+Static code analysis with Psalm:
+
 ```bash
-vendor/bin/codecept run
-vendor/bin/psalm
+composer analyse
+```
+
+Test with Codeception:
+
+```bash
+composer test
+```
+
+Test with Codeception (plus code coverage):
+
+```bash
+composer test-coverage
 ```
 
 
