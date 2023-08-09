@@ -9,31 +9,21 @@ class MainCommandCest
 {
     public function testGetName(ConsoleTester $I): void
     {
-        $command = new MainCommand();
+        $metadata = $I->grabCommandMetadata(MainCommand::class);
 
         $I->assertEquals(
             "",
-            $command->getName()
+            $metadata->getName()
         );
     }
 
     public function testGetDescription(ConsoleTester $I): void
     {
-        $command = new MainCommand();
+        $metadata = $I->grabCommandMetadata(MainCommand::class);
 
         $I->assertEquals(
             "",
-            $command->getDescription()
-        );
-    }
-
-    public function testGetHelp(ConsoleTester $I): void
-    {
-        $command = new MainCommand();
-
-        $I->assertEquals(
-            "",
-            $command->getHelp()
+            $metadata->getDescription()
         );
     }
 
@@ -41,9 +31,7 @@ class MainCommandCest
 
     public function testExecute(ConsoleTester $I): void
     {
-        $I->addCommand(
-            new MainCommand()
-        );
+        $I->addCommand(MainCommand::class);
 
         $I->runCommand(
             [

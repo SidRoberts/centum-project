@@ -22,9 +22,7 @@ $console = new Application($container);
 //                                  COMMANDS                                  //
 ////////////////////////////////////////////////////////////////////////////////
 
-$console->addCommand(
-    new MainCommand()
-);
+$console->addCommand(MainCommand::class);
 
 
 
@@ -34,7 +32,7 @@ $console->addCommand(
 
 $console->addExceptionHandler(
     Throwable::class,
-    new ErrorCommand()
+    ErrorCommand::class
 );
 
 
