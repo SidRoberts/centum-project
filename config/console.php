@@ -3,6 +3,7 @@
 namespace App\Commands;
 
 use Centum\Console\Application;
+use Centum\Interfaces\Console\CommandBuilderInterface;
 use Centum\Interfaces\Container\ContainerInterface;
 use Throwable;
 
@@ -14,7 +15,9 @@ use Throwable;
  * @psalm-suppress UnnecessaryVarAnnotation
  * @var ContainerInterface $container
  */
-$console = new Application($container);
+$commandBuilder = $container->get(CommandBuilderInterface::class);
+
+$console = new Application($container, $commandBuilder);
 
 
 
