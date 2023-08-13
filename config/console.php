@@ -15,9 +15,7 @@ use Throwable;
  * @psalm-suppress UnnecessaryVarAnnotation
  * @var ContainerInterface $container
  */
-$commandBuilder = $container->get(CommandBuilderInterface::class);
-
-$console = new Application($container, $commandBuilder);
+$console = new Application($container);
 
 
 
