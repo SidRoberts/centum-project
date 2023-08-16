@@ -3,9 +3,7 @@
 namespace App\Commands;
 
 use Centum\Console\Application;
-use Centum\Interfaces\Console\CommandBuilderInterface;
 use Centum\Interfaces\Container\ContainerInterface;
-use Throwable;
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                  CONSOLE                                   //
@@ -31,10 +29,7 @@ $console->addCommand(MainCommand::class);
 //                             EXCEPTION HANDLERS                             //
 ////////////////////////////////////////////////////////////////////////////////
 
-$console->addExceptionHandler(
-    Throwable::class,
-    ErrorCommand::class
-);
+$console->addExceptionHandler(ExceptionHandler::class);
 
 
 

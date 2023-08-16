@@ -3,9 +3,7 @@
 namespace App\Controllers;
 
 use Centum\Interfaces\Container\ContainerInterface;
-use Centum\Router\Exception\RouteNotFoundException;
 use Centum\Router\Router;
-use Throwable;
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                   ROUTER                                   //
@@ -27,27 +25,15 @@ $group = $router->group();
 
 $group->get("/", IndexController::class, "index");
 
-$group->get("/error/403", ErrorController::class, "error403");
-$group->get("/error/404", ErrorController::class, "error404");
-$group->get("/error/500", ErrorController::class, "error500");
-
 
 
 ////////////////////////////////////////////////////////////////////////////////
 //                             EXCEPTION HANDLERS                             //
 ////////////////////////////////////////////////////////////////////////////////
 
-$router->addExceptionHandler(
-    RouteNotFoundException::class,
-    ErrorController::class,
-    "error404"
-);
+$router->addExceptionHandler(RouteNotFoundExceptionHandler::class);
 
-$router->addExceptionHandler(
-    Throwable::class,
-    ErrorController::class,
-    "error500"
-);
+$router->addExceptionHandler(ExceptionHandler::class);
 
 
 
