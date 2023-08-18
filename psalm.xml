@@ -24,7 +24,10 @@
     <issueHandlers>
         <PossiblyUnusedMethod>
             <errorLevel type="suppress">
+                <directory name="src/Console/Commands"/>
+                <directory name="src/Console/ExceptionHandlers"/>
                 <directory name="src/Web/Controllers"/>
+                <directory name="src/Web/ExceptionHandlers"/>
             </errorLevel>
         </PossiblyUnusedMethod>
         <UnusedClass>
