@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Commands;
+namespace App\Console\Commands;
 
+use App\Console\ExceptionHandlers\ExceptionHandler;
 use Centum\Console\Application;
 use Centum\Interfaces\Container\ContainerInterface;
 

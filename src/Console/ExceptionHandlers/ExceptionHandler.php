@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Commands;
+namespace App\Console\ExceptionHandlers;
 
 use Centum\Interfaces\Console\ExceptionHandlerInterface;
 use Centum\Interfaces\Console\TerminalInterface;

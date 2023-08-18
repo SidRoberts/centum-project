@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Web\ExceptionHandlers;
 
 use Centum\Http\Response;
 use Centum\Http\Status;

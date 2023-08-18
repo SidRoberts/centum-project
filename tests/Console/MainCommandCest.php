@@ -2,7 +2,7 @@
 
 namespace Tests\Console;
 
-use App\Commands\MainCommand;
+use App\Console\Commands\MainCommand;
 use Tests\Support\ConsoleTester;
 
 class MainCommandCest

@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Web\Controllers;
 
+use App\Web\ExceptionHandlers\ExceptionHandler;
+use App\Web\ExceptionHandlers\RouteNotFoundExceptionHandler;
 use Centum\Interfaces\Container\ContainerInterface;
 use Centum\Router\Router;
 

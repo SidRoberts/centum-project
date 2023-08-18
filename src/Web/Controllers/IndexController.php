@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Web\Controllers;
 
 use Centum\Http\Response;
 use Centum\Interfaces\Http\ResponseInterface;
