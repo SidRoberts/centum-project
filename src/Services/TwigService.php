@@ -13,7 +13,7 @@ use Twig\Loader\FilesystemLoader;
 /**
  * @implements ServiceInterface<Environment>
  */
-class TwigService implements ServiceInterface
+final class TwigService implements ServiceInterface
 {
     public function __construct(
         protected readonly DebugExtension $debugExtension,

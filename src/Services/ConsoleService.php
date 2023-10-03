@@ -12,7 +12,7 @@ use Centum\Interfaces\Container\ServiceInterface;
 /**
  * @implements ServiceInterface<ApplicationInterface>
  */
-class ConsoleService implements ServiceInterface
+final class ConsoleService implements ServiceInterface
 {
     public function __construct(
         protected readonly ContainerInterface $container

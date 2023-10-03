@@ -9,7 +9,7 @@ use Centum\Url\Url;
 /**
  * @implements ServiceInterface<UrlInterface>
  */
-class UrlService implements ServiceInterface
+final class UrlService implements ServiceInterface
 {
     public function build(): UrlInterface
     {
