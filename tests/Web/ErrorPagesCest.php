@@ -4,7 +4,7 @@ namespace Tests\Web;
 
 use Tests\Support\WebTester;
 
-class ErrorPagesCest
+final class ErrorPagesCest
 {
     public function pageNotFound(WebTester $I): void
     {

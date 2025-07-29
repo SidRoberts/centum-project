@@ -4,7 +4,7 @@ namespace Tests\Web;
 
 use Tests\Support\WebTester;
 
-class IndexCest
+final class IndexCest
 {
     public function tryToTest(WebTester $I): void
     {

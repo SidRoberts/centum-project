@@ -5,7 +5,7 @@ namespace Tests\Console;
 use App\Console\Commands\MainCommand;
 use Tests\Support\ConsoleTester;
 
-class MainCommandCest
+final class MainCommandCest
 {
     public function testGetName(ConsoleTester $I): void
     {

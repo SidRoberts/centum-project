@@ -22,6 +22,15 @@
         </ignoreFiles>
     </projectFiles>
     <issueHandlers>
+        <MissingOverrideAttribute>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+                <directory name="tests/Console"/>
+                <directory name="tests/Support"/>
+                <directory name="tests/Unit"/>
+                <directory name="tests/Web"/>
+            </errorLevel>
+        </MissingOverrideAttribute>
         <PossiblyUnusedMethod>
             <errorLevel type="suppress">
                 <directory name="src/Console/Commands"/>
