@@ -8,7 +8,7 @@ on:
 
 jobs:
   codeception:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Validate composer.json and composer.lock
@@ -18,7 +18,7 @@ jobs:
     - name: Run test suite
       run: vendor/bin/codecept run
   psalm:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Validate composer.json and composer.lock
