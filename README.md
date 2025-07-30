@@ -1,4 +1,4 @@
-# Centum
+# Centum Project Skeleton
 
 A quick starting point for projects based on the [Centum framework](https://github.com/SidRoberts/centum).
 
@@ -9,17 +9,13 @@ A quick starting point for projects based on the [Centum framework](https://gith
 [![GitHub issues](https://img.shields.io/github/issues-raw/SidRoberts/centum-project.svg?style=for-the-badge)](https://github.com/SidRoberts/centum-project/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/SidRoberts/centum-project.svg?style=for-the-badge)](https://github.com/SidRoberts/centum-project/pulls)
 
-
-
-## Documentation
-
-Check out Centum's [Quick Start](https://sidroberts.co.uk/centum/quick-start/) guide.
+[![License](https://img.shields.io/github/license/SidRoberts/centum-project?style=for-the-badge)](LICENSE.md)
 
 
 
-## Usage
+## 🚀 Quick Start
 
-A skeleton project can be created using Composer's `create-project` command:
+Create a new Centum-based project using Composer:
 
 ```bash
 composer create-project sidroberts/centum-project YOUR-PROJECT-NAME -s dev
@@ -31,31 +27,50 @@ docker-compose up
 
 
 
-## Testing
+## 📚 Documentation
 
-Static code analysis with Psalm:
+- [Quick Start Guide](https://sidroberts.co.uk/centum/quick-start/)
+- [Centum Framework Documentation](https://sidroberts.co.uk/centum/)
 
-```bash
-composer analyse
+
+
+## 🧪 Testing
+
+- **Static Analysis:**
+  Run Psalm for static code analysis:
+  ```bash
+  composer analyse
+  ```
+
+- **Unit & Functional Tests:**
+  Run tests with Codeception:
+  ```bash
+  composer test
+  ```
+
+- **Code Coverage:**
+  Run tests with coverage report:
+  ```bash
+  composer test-coverage
+  ```
+
+
+
+## 🗂️ Project Structure
+
+```
+bin/           # Executables and scripts
+config/        # Configuration files
+public/        # Public web assets (entry point: index.php)
+resources/     # Templates, assets, etc.
+src/           # Application source code
+tests/         # Test suites
+vendor/        # Composer dependencies
 ```
 
-Test with Codeception:
-
-```bash
-composer test
-```
-
-Test with Codeception (plus code coverage):
-
-```bash
-composer test-coverage
-```
 
 
-
-## License
-
-[![License](https://img.shields.io/github/license/SidRoberts/centum-project?style=for-the-badge)](LICENSE.md)
+## 📄 License
 
 Whilst the [Centum framework is licensed under the MIT License](https://github.com/SidRoberts/centum-project/blob/development/LICENSE.md), **this skeleton project is released under the Unlicense license**.
 
