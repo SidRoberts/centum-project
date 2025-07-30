@@ -60,9 +60,9 @@ $config->setRules(
             ],
         ],
 
-        "ordered_imports"             => false,
         "ordered_imports"             => true,
         "ordered_interfaces"          => true,
+        "ordered_types"               => true,
         "phpdoc_summary"              => false,
         "phpdoc_to_comment"           => false,
         "random_api_migration"        => true,
@@ -73,7 +73,14 @@ $config->setRules(
         "strict_comparison"           => true,
         "strict_param"                => true,
         "ternary_to_null_coalescing"  => true,
-        "yoda_style"                  => false,
+
+        "trailing_comma_in_multiline" => [
+            "elements" => [
+                "arrays",
+            ],
+        ],
+
+        "yoda_style" => false,
     ]
 );
 
