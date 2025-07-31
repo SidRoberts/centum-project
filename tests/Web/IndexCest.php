@@ -12,6 +12,6 @@ final class IndexCest
 
         $I->seeResponseCodeIs(200);
 
-        $I->see("Sid Roberts");
+        $I->see("This is where it all begins...");
     }
 }
