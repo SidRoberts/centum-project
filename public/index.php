@@ -6,6 +6,6 @@ use Centum\App\WebBootstrap;
 
 $container = require __DIR__ . "/../config/container.php";
 
-$bootstrap = new WebBootstrap();
+$bootstrap = $container->get(WebBootstrap::class);
 
 $bootstrap->boot($container);
