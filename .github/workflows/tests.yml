@@ -47,3 +47,24 @@ jobs:
       run: vendor/bin/codecept build
     - name: Run psalm
       run: vendor/bin/psalm
+  php-cs-fixer:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.3']
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        extensions: yaml
+        tools: composer:v2
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+    - name: Build test suite
+      run: vendor/bin/codecept build
+    - name: Run php-cs-fixer
+      run: vendor/bin/php-cs-fixer fix --allow-risky=yes --dry-run
