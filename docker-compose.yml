@@ -17,5 +17,5 @@ services:
     image: sidroberts/php
     volumes:
       - .:/app/
-    command: php /app/bin/centum queue-consume
+    command: php /app/bin/centum queue:consume
     restart: always

@@ -22,7 +22,7 @@ composer create-project sidroberts/centum-project YOUR-PROJECT-NAME -s dev
 
 cd YOUR-PROJECT-NAME
 
-docker-compose up
+docker compose up
 ```
 
 
