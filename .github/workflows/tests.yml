@@ -9,8 +9,17 @@ on:
 jobs:
   codeception:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.3']
     steps:
     - uses: actions/checkout@v2
+    - name: Install PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        extensions: yaml
+        tools: composer:v2
     - name: Validate composer.json and composer.lock
       run: composer validate
     - name: Install dependencies
@@ -19,8 +28,17 @@ jobs:
       run: vendor/bin/codecept run
   psalm:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.3']
     steps:
     - uses: actions/checkout@v2
+    - name: Install PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        extensions: yaml
+        tools: composer:v2
     - name: Validate composer.json and composer.lock
       run: composer validate
     - name: Install dependencies
