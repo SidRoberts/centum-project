@@ -7,14 +7,14 @@ services:
       - .:/app/:ro
       - ./resources/docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
   php:
-    image: sidroberts/php:8.3
+    image: sidroberts/php:8.4
     volumes:
       - .:/app/
       - ./resources/docker/php.ini:/usr/local/etc/php-fpm.d/zzz-custom.conf:ro
   beanstalkd:
     image: sidroberts/beanstalkd:1.13
   background:
-    image: sidroberts/php:8.3
+    image: sidroberts/php:8.4
     depends_on:
       - beanstalkd
     volumes:
