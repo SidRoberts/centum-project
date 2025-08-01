@@ -15,6 +15,8 @@ services:
     image: sidroberts/beanstalkd:1.13
   background:
     image: sidroberts/php:8.3
+    depends_on:
+      - beanstalkd
     volumes:
       - .:/app/
     command: php /app/bin/centum queue:consume
