@@ -4,6 +4,8 @@ use App\Services\ConsoleService;
 use App\Services\PheanstalkSocketFactoryService;
 use App\Services\RequestService;
 use App\Services\RouterService;
+use App\Services\TranslatorLocaleService;
+use App\Services\TranslatorLocalesService;
 use App\Services\TwigService;
 use App\Services\UrlService;
 use Centum\Container\Container;
@@ -15,6 +17,8 @@ use Centum\Interfaces\Http\RequestInterface;
 use Centum\Interfaces\Http\SessionInterface;
 use Centum\Interfaces\Queue\QueueInterface;
 use Centum\Interfaces\Router\RouterInterface;
+use Centum\Interfaces\Translation\LocaleInterface;
+use Centum\Interfaces\Translation\LocalesInterface;
 use Centum\Interfaces\Url\UrlInterface;
 use Centum\Queue\BeanstalkdQueue;
 use Pheanstalk\Contract\PheanstalkPublisherInterface;
@@ -75,6 +79,11 @@ $aliasManager->add(PheanstalkSubscriberInterface::class, PheanstalkSubscriber::c
 $serviceStorage->set(SocketFactoryInterface::class, PheanstalkSocketFactoryService::class);
 
 $aliasManager->add(QueueInterface::class, BeanstalkdQueue::class);
+
+////////////////////////////////////////////////////////////////////////////////
+
+$serviceStorage->set(LocaleInterface::class, TranslatorLocaleService::class);
+$serviceStorage->set(LocalesInterface::class, TranslatorLocalesService::class);
 
 
 

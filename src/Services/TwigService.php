@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Centum\Interfaces\Container\ServiceInterface;
 use Centum\Twig\FlashExtension;
+use Centum\Twig\TranslationExtension;
 use Centum\Twig\UrlExtension;
 use Centum\Twig\WhitelistedFunctionsExtension;
 use Twig\Environment;
@@ -18,6 +19,7 @@ final class TwigService implements ServiceInterface
     public function __construct(
         protected readonly DebugExtension $debugExtension,
         protected readonly FlashExtension $flashExtension,
+        protected readonly TranslationExtension $translationExtension,
         protected readonly UrlExtension $urlExtension
     ) {
     }
@@ -42,6 +44,8 @@ final class TwigService implements ServiceInterface
         $twig->addExtension($this->debugExtension);
 
         $twig->addExtension($this->flashExtension);
+
+        $twig->addExtension($this->translationExtension);
 
         $twig->addExtension($this->urlExtension);
 

@@ -3,7 +3,7 @@
 
 
 {% block title %}
-    Error 404 - Not Found
+    {{ translate("error/404", "title") }}
 {% endblock title %}
 
 
@@ -12,16 +12,15 @@
 
 <div class="text-center rounded-3 p-5 bg-warning-subtle">
     <h1 class="display-1 mb-4">
-        Error 404 - Not Found
+        {{ translate("error/404", "title") }}
     </h1>
 
     <p class="lead">
-        The URI <code>{{ uri }}</code> could not be found.
-        Did you type it correctly?
+        {{ translate("error/404", "explanation", { "uri": uri }) }}
     </p>
 
     <p class="lead">
-        Alternatively, you can <a href="http://www.checkupdown.com/status/E404.html">learn more about 404 errors</a>.
+        {{ translate("error/404", "alternative") }}
     </p>
 </div>
 
