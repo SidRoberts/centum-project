@@ -9,7 +9,7 @@ A quick starting point for projects based on the [Centum framework](https://gith
 [![GitHub issues](https://img.shields.io/github/issues-raw/SidRoberts/centum-project.svg?style=for-the-badge)](https://github.com/SidRoberts/centum-project/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/SidRoberts/centum-project.svg?style=for-the-badge)](https://github.com/SidRoberts/centum-project/pulls)
 
-[![License](https://img.shields.io/github/license/SidRoberts/centum-project?style=for-the-badge)](LICENSE.md)
+[![License](https://img.shields.io/github/license/SidRoberts/centum-project?style=for-the-badge)](LICENSE)
 
 
 
@@ -72,6 +72,6 @@ vendor/        # Composer dependencies
 
 ## 📄 License
 
-Whilst the [Centum framework is licensed under the MIT License](https://github.com/SidRoberts/centum-project/blob/development/LICENSE.md), **this skeleton project is released under the Unlicense license**.
+Whilst the [Centum framework is licensed under the MIT License](https://github.com/SidRoberts/centum-project/blob/main/LICENSE), **this skeleton project is released under the Unlicense license**.
 
-See [LICENSE.md](LICENSE.md) for more details.
+See [LICENSE](LICENSE) for more details.
