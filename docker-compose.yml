@@ -19,5 +19,5 @@ services:
       - beanstalkd
     volumes:
       - .:/app/
-    command: php /app/bin/centum queue:consume
+    command: php /app/bin/console queue:consume
     restart: unless-stopped
