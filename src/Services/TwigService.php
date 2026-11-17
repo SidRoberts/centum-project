@@ -49,7 +49,7 @@ final class TwigService implements ServiceInterface
 
         $twig->addExtension($this->urlExtension);
 
-        /** @var array<callable-string> */
+        /** @var list<callable-string> */
         $whitelistedFunctions = [
             "number_format",
             "round",
